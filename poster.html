@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>The Daily Ledger — Friday, 27 November 2026</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { width:1024px; height:1024px; }
+  body {
+    background:#f3eee3;
+    color:#17130e;
+    font-family:'Liberation Serif', Georgia, 'DejaVu Serif', serif;
+    -webkit-font-smoothing:antialiased;
+    padding:22px 40px 0 40px;
+    position:relative;
+    overflow:hidden;
+    display:flex; flex-direction:column; box-sizing:border-box;
+  }
+  .sans { font-family:'Liberation Sans', Helvetica, Arial, sans-serif; }
+  .caps { text-transform:uppercase; letter-spacing:.14em; }
+  .red { color:#b31b1b; }
+  .rule { border-top:1px solid #17130e; }
+  .hair { border-top:1px solid rgba(23,19,14,.45); }
+  .thick { border-top:3px solid #b31b1b; }
+
+  /* ---------- top strip ---------- */
+  .topstrip { display:flex; justify-content:space-between; align-items:baseline;
+    font-family:'Liberation Sans', Helvetica, Arial, sans-serif; font-size:8.6px;
+    letter-spacing:.16em; text-transform:uppercase; color:#3a332a; padding-bottom:6px; }
+  .topstrip b { font-weight:700; color:#17130e; }
+
+  /* ---------- masthead ---------- */
+  .masthead { padding:6px 0 6px; text-align:center; position:relative; }
+  .masthead h1 { font-size:60px; line-height:.94; letter-spacing:.035em; font-weight:400; }
+  .masthead .sub { font-family:'Liberation Sans', Helvetica, Arial, sans-serif;
+    font-size:8.4px; letter-spacing:.30em; text-transform:uppercase; color:#4a4238; margin-top:6px; }
+  .masthead .corner { position:absolute; bottom:10px; font-family:'Liberation Sans',sans-serif;
+    font-size:8px; letter-spacing:.12em; text-transform:uppercase; color:#5a5145; }
+  .corner.l { left:0; } .corner.r { right:0; text-align:right; }
+
+  /* ---------- dateline band ---------- */
+  .dateline { display:flex; align-items:flex-end; gap:0; padding:8px 0 7px; margin-top:1px; }
+  .dnum { display:flex; align-items:flex-start; gap:11px; padding-right:18px; }
+  .dnum .dow { font-family:'Liberation Sans',sans-serif; font-size:9.5px; letter-spacing:.26em;
+    text-transform:uppercase; padding-top:11px; }
+  .dnum .big { font-size:74px; line-height:.78; letter-spacing:-.015em; }
+  .dnum .mon { display:flex; flex-direction:column; padding-top:6px; }
+  .dnum .mon span:first-child { font-family:'Liberation Sans',sans-serif; font-size:17px;
+    letter-spacing:.16em; text-transform:uppercase; font-weight:700; }
+  .dnum .mon span:last-child { font-family:'Liberation Sans',sans-serif; font-size:9px;
+    letter-spacing:.22em; text-transform:uppercase; color:#4a4238; margin-top:3px; }
+  .stats { display:flex; margin-left:auto; align-items:flex-end; }
+  .stat { padding:0 16px; border-left:1px solid rgba(23,19,14,.35); text-align:left; }
+  .stat:last-child { padding-right:0; }
+  .stat b { display:block; font-size:25px; letter-spacing:-.01em; line-height:1; white-space:nowrap; }
+  .stat > span { display:block; font-family:'Liberation Sans',sans-serif; font-size:7.8px;
+    letter-spacing:.10em; text-transform:uppercase; color:#4a4238; margin-top:4px; max-width:106px; line-height:1.3; }
+
+  /* ---------- lead ---------- */
+  .lead { display:flex; gap:20px; padding:11px 0 10px; }
+  .lead .kicker { font-family:'Liberation Sans',sans-serif; font-size:9px; letter-spacing:.2em;
+    text-transform:uppercase; color:#b31b1b; font-weight:700; margin-bottom:7px; }
+  .lead h2 { font-size:42px; line-height:1.02; letter-spacing:-.012em; font-weight:400; }
+  .lead h2 em { font-style:italic; }
+  .lead .dek { font-family:'Liberation Sans',sans-serif; font-size:12px; line-height:1.42;
+    color:#2a241c; margin-top:9px; max-width:560px; }
+  .lead .dek b { font-weight:700; }
+  .lead .body { font-size:10.5px; line-height:1.44; color:#2a241c; margin-top:8px; max-width:560px;
+    column-count:2; column-gap:16px; column-rule:1px solid rgba(23,19,14,.2); }
+  .lead .body p { text-indent:0; }
+  .lead .art { flex:0 0 268px; display:flex; flex-direction:column; justify-content:flex-start;
+    align-items:stretch; padding-top:2px; }
+  .lead .art svg { display:block; width:268px; height:150px; }
+  .lead .art .cap { font-family:'Liberation Sans',sans-serif; font-size:8.2px; line-height:1.4;
+    letter-spacing:.02em; color:#4a4238; border-top:1px solid rgba(23,19,14,.35); padding-top:5px; margin-top:6px; }
+
+  /* ---------- grid ---------- */
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:1fr; }
+  .cell { padding:10px 17px 10px 0; border-top:1px solid rgba(23,19,14,.45); }
+  .cell + .cell { padding-left:17px; border-left:1px solid rgba(23,19,14,.28); }
+  .cell:nth-child(3n) { padding-right:0; }
+  .cell .head { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:6px; }
+  .cell .kick { font-family:'Liberation Sans',sans-serif; font-size:8.2px; letter-spacing:.15em;
+    text-transform:uppercase; color:#b31b1b; font-weight:700; padding-top:2px; }
+  .cell h3 { font-size:19.5px; line-height:1.06; font-weight:400; letter-spacing:-.005em; }
+  .cell p { font-family:'Liberation Sans',sans-serif; font-size:10.1px; line-height:1.36; color:#2a241c; margin-top:6px; }
+  .cell .icon { flex:0 0 30px; width:30px; height:30px; }
+  .cell .icon svg { width:30px; height:30px; display:block; }
+  .quote { display:flex; align-items:baseline; gap:14px; margin-top:0; padding:10px 0 0; border-top:1px solid rgba(23,19,14,.45); }
+  .quote .lab { font-family:'Liberation Sans',sans-serif; font-size:8.2px; letter-spacing:.16em;
+    text-transform:uppercase; color:#b31b1b; font-weight:700; white-space:nowrap; }
+  .quote .txt { font-size:16.5px; line-height:1.2; font-style:italic; }
+  .quote .who { font-family:'Liberation Sans',sans-serif; font-size:8.6px; letter-spacing:.08em;
+    text-transform:uppercase; color:#4a4238; white-space:nowrap; margin-left:auto; }
+
+  /* lead chart */
+  .chart-title { font-family:'Liberation Sans',sans-serif; font-size:8.2px; letter-spacing:.14em;
+    text-transform:uppercase; color:#17130e; font-weight:700; border-bottom:2px solid #17130e; padding-bottom:4px; }
+  .chart { margin-top:7px; }
+  .row { display:flex; align-items:center; height:19px; }
+  .row .nm { width:66px; font-family:'Liberation Sans',sans-serif; font-size:8.6px; color:#2a241c; }
+  .row .tr { flex:1; height:9px; background:rgba(23,19,14,.08); }
+  .row .fl { height:9px; background:#17130e; }
+  .row .fl.hot { background:#b31b1b; }
+  .row .vl { width:34px; text-align:right; font-family:'Liberation Sans',sans-serif; font-size:8.6px; font-weight:700; }
+
+  /* ---------- briefs ---------- */
+  .briefs { display:grid; grid-template-columns:repeat(4,1fr); margin-top:0; padding-top:0; }
+  .brief { padding:9px 14px 11px 0; border-top:1px solid rgba(23,19,14,.3);
+    font-family:'Liberation Sans',sans-serif; font-size:8.9px; line-height:1.34; color:#2a241c; }
+  .brief + .brief { padding-left:14px; border-left:1px solid rgba(23,19,14,.22); }
+  .brief:nth-child(4n) { padding-right:0; }
+  .brief:nth-child(4n+1) { padding-left:0; border-left:none; }
+  .brief b { display:block; font-family:'Liberation Serif',Georgia,serif; font-size:11.8px;
+    line-height:1.12; color:#17130e; font-weight:700; margin-bottom:3px; }
+  .brief .tag { font-size:8px; letter-spacing:.15em; text-transform:uppercase; color:#b31b1b; font-weight:700; }
+
+  .fill { flex:1 1 auto; min-height:10px; }
+  .colophon { display:flex; justify-content:space-between; align-items:baseline; margin-top:0;
+    padding-top:6px; border-top:1px solid rgba(23,19,14,.35); font-family:'Liberation Sans',sans-serif;
+    font-size:7.6px; letter-spacing:.13em; text-transform:uppercase; color:#5a5145; }
+  footer { display:flex; justify-content:space-between; align-items:baseline;
+    font-family:'Liberation Sans',sans-serif; font-size:7.8px; letter-spacing:.1em;
+    text-transform:uppercase; color:#4a4238; border-top:2px solid #17130e; padding-top:6px; margin:10px 0 15px; }
+</style>
+</head>
+<body>
+
+<div class="topstrip">
+  <div>Global edition &nbsp;·&nbsp; No. 336 &nbsp;·&nbsp; <b>Fifteen stories, five continents</b></div>
+  <div>One page &nbsp;·&nbsp; one day &nbsp;·&nbsp; <b>Friday, 27 November 2026</b></div>
+</div>
+<div class="rule"></div>
+
+<div class="masthead">
+  <div class="corner l">Independent<br>since MMXXVI</div>
+  <h1>The Daily Ledger</h1>
+  <div class="sub">Politics &nbsp;·&nbsp; Markets &nbsp;·&nbsp; Science &nbsp;·&nbsp; Sport &nbsp;·&nbsp; Culture</div>
+  <div class="corner r">Compiled 27.11.2026<br>23:00 UTC</div>
+</div>
+<div class="thick"></div>
+
+<div class="dateline">
+  <div class="dnum">
+    <div class="dow">Friday</div>
+    <div class="big">27</div>
+    <div class="mon"><span>November</span><span>2026</span></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>14</b><span>Economies in Washington's new tariff net</span></div>
+    <div class="stat"><b>20%</b><span>Proposed US duty on Chinese goods</span></div>
+    <div class="stat"><b>4%</b><span>Eurozone inflation as the ECB changes guard</span></div>
+    <div class="stat"><b>5,904</b><span>Ebola deaths in DR Congo, a record outbreak</span></div>
+  </div>
+</div>
+<div class="rule"></div>
+
+<!-- ================= LEAD ================= -->
+<div class="lead">
+  <div style="flex:1 1 auto;">
+    <div class="kicker">Trade &nbsp;·&nbsp; Washington and Beijing</div>
+    <h2>Half the world's output says no<br>to Washington's tariffs</h2>
+    <div class="dek">Fourteen economies — from China and Japan to the EU — formally reject the
+      “overcapacity” case behind a new Section&nbsp;301 round, as Beijing threatens
+      “necessary measures” and the truce clock runs to January.</div>
+    <div class="body">
+      <p>The US Trade Representative proposed duties on Wednesday covering economies that
+      together produce roughly half of global output: China at 20 per cent, Vietnam 35,
+      India 25, Japan 15. On Thursday and Friday the objections arrived in unison, each
+      government rejecting the finding that its factories are structurally too large.</p>
+      <p>Beijing called overcapacity a “false premise” and warned that tariff wars serve no
+      one's interests. Tokyo said it had protested; Singapore said it was “very
+      disappointed”. The duties are meant to rebuild levies the Supreme Court struck down
+      in February, and would land just as the US–China truce expires on 10 January.</p>
+    </div>
+  </div>
+  <div class="art">
+    <div class="chart-title">Proposed US duties, Section 301</div>
+    <div class="chart">
+      <div class="row"><div class="nm">Vietnam</div><div class="tr"><div class="fl hot" style="width:87.5%"></div></div><div class="vl">35%</div></div>
+      <div class="row"><div class="nm">India</div><div class="tr"><div class="fl" style="width:62.5%"></div></div><div class="vl">25%</div></div>
+      <div class="row"><div class="nm">China</div><div class="tr"><div class="fl" style="width:50%"></div></div><div class="vl">20%</div></div>
+      <div class="row"><div class="nm">Singapore</div><div class="tr"><div class="fl" style="width:50%"></div></div><div class="vl">20%</div></div>
+      <div class="row"><div class="nm">Japan</div><div class="tr"><div class="fl" style="width:37.5%"></div></div><div class="vl">15%</div></div>
+      <div class="row"><div class="nm">E.U.</div><div class="tr"><div class="fl" style="width:37.5%"></div></div><div class="vl">15%</div></div>
+    </div>
+    <div class="cap">Caps under existing deals; China's rate could double to 40% if Washington judges
+      Beijing uncooperative. Rates cover 14 economies, about half of world output.</div>
+  </div>
+</div>
+<div class="rule"></div>
+
+<!-- ================= GRID ================= -->
+<div class="grid">
+
+  <div class="cell">
+    <div class="head">
+      <div class="kick">Europe &nbsp;·&nbsp; Frankfurt</div>
+      <div class="icon"><svg viewBox="0 0 34 34" fill="none" stroke="#17130e" stroke-width="1.5">
+        <path d="M3.5 12.5 L17 5.2 L30.5 12.5 Z"/><path d="M3.5 15 H30.5" stroke="#b31b1b" stroke-width="2.2"/>
+        <path d="M7.5 18 V27"/><path d="M13.2 18 V27"/><path d="M20.8 18 V27"/><path d="M26.5 18 V27"/>
+        <path d="M3.5 30 H30.5" stroke-width="2"/></svg></div>
+    </div>
+    <h3>De Cos takes the ECB, and a 4% inflation problem</h3>
+    <p>EU leaders pick Spain's Pablo Hernández de Cos to succeed Christine Lagarde on 7 February,
+      handing a Draghi ally the fight against war-driven prices.</p>
+  </div>
+
+  <div class="cell">
+    <div class="head">
+      <div class="kick">Europe &nbsp;·&nbsp; Brussels</div>
+      <div class="icon"><svg viewBox="0 0 34 34" fill="none" stroke="#17130e" stroke-width="1.4">
+        <g fill="#17130e" stroke="none">
+          <circle cx="17" cy="6.4" r="1.5"/><circle cx="22.3" cy="8.6" r="1.5"/>
+          <circle cx="25.6" cy="13.1" r="1.5"/><circle cx="25.6" cy="18.4" r="1.5"/>
+          <circle cx="22.3" cy="22.9" r="1.5"/><circle cx="17" cy="25.1" r="1.5"/>
+          <circle cx="11.7" cy="22.9" r="1.5"/><circle cx="8.4" cy="18.4" r="1.5"/>
+          <circle cx="8.4" cy="13.1" r="1.5"/><circle cx="11.7" cy="8.6" r="1.5"/>
+        </g>
+        <circle cx="17" cy="15.9" r="4.1" stroke="#b31b1b" stroke-width="1.7"/></svg></div>
+    </div>
+    <h3>Budget summit deadlocks over Ukraine's €45bn</h3>
+    <p>Merz demands deeper cuts and no new borrowing; Macron calls €204bn of savings a “strategic
+      mistake”. Slovakia, Hungary and Czechia resist the loan.</p>
+  </div>
+
+  <div class="cell">
+    <div class="head">
+      <div class="kick">Middle East &nbsp;·&nbsp; Sanaa and Kuwait</div>
+      <div class="icon"><svg viewBox="0 0 34 34" fill="none" stroke="#17130e" stroke-width="1.6">
+        <path d="M17 3.6 L19.6 11.2 L27.4 6.6 L22.8 14.4 L30.4 17 L22.8 19.6 L27.4 27.4
+                 L19.6 22.8 L17 30.4 L14.4 22.8 L6.6 27.4 L11.2 19.6 L3.6 17 L11.2 14.4
+                 L6.6 6.6 L14.4 11.2 Z" stroke-linejoin="round"/>
+        <circle cx="17" cy="17" r="2.4" fill="#b31b1b" stroke="none"/>
+      </svg></div>
+    </div>
+    <h3>Eleven dead in Yemen; a drone war reaches Kuwait</h3>
+    <p>Houthi medics report children among the dead in the south-west as the Saudi-led coalition
+      claims 50 targets destroyed. Two Italian technicians die in Kuwait.</p>
+  </div>
+
+  <div class="cell">
+    <div class="head">
+      <div class="kick">Africa &nbsp;·&nbsp; Ituri, DR Congo</div>
+      <div class="icon"><svg viewBox="0 0 34 34" fill="none">
+        <circle cx="17" cy="17" r="12.4" stroke="#17130e" stroke-width="1.5"/>
+        <g stroke="#b31b1b" stroke-width="3.4" stroke-linecap="butt">
+          <path d="M17 10.6 V23.4"/><path d="M10.6 17 H23.4"/>
+        </g>
+      </svg></div>
+    </div>
+    <h3>Ebola passes 12,000 cases as the fighting cuts the response</h3>
+    <p>5,904 deaths from the Bundibugyo strain, which has no approved vaccine. Militia clashes
+      have forced WHO teams out of treatment centres.</p>
+  </div>
+
+  <div class="cell">
+    <div class="head">
+      <div class="kick">Asia-Pacific &nbsp;·&nbsp; Mahia</div>
+      <div class="icon"><svg viewBox="0 0 34 34" fill="none" stroke="#17130e" stroke-width="1.5">
+        <path d="M17 2.8 C21.6 8.4 21.6 15.4 17 22 L12.4 22 C7.8 15.4 7.8 8.4 17 2.8 Z" stroke-linejoin="round"/>
+        <circle cx="17" cy="12.2" r="2.1"/>
+        <path d="M12.4 18 L8 23.6 L12.4 23.2" stroke-linejoin="round"/>
+        <path d="M21.6 18 L26 23.6 L21.6 23.2" stroke-linejoin="round"/>
+        <path d="M17 22 V26" stroke="#b31b1b" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M14.4 27.6 L17 29.4 L19.6 27.6" stroke="#b31b1b" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+    </div>
+    <h3>Electron's 101st flight sets a company record</h3>
+    <p>Rocket Lab's 22nd launch of 2026 puts a Japanese radar satellite in a 569km orbit — its
+      fourteenth mission for Synspective.</p>
+  </div>
+
+  <div class="cell">
+    <div class="head">
+      <div class="kick">Americas &nbsp;·&nbsp; Washington</div>
+      <div class="icon"><svg viewBox="0 0 34 34" fill="none" stroke="#17130e" stroke-width="1.5">
+        <path d="M7.6 25.4 a5.4 5.4 0 0 1 .8 -10.7 A7.4 7.4 0 0 1 23.4 15.4 A5 5 0 0 1 23.6 25.4 Z"/>
+        <path d="M14.1 21.6 V19.9 a2.9 2.9 0 0 1 5.8 0 V21.6" stroke="#b31b1b" stroke-width="1.8"/>
+        <rect x="12.9" y="21.4" width="8.2" height="5.6" rx="1" stroke="#b31b1b" stroke-width="1.6"/>
+        <circle cx="17" cy="24.2" r="1.05" fill="#b31b1b" stroke="none"/></svg></div>
+    </div>
+    <h3>Hackers reach the control plane of the Air Force's cloud</h3>
+    <p>Cloud One — built on Microsoft, Amazon, Oracle and Google — was breached during an upgrade.
+      Migrations are paused and Cyber Command is assessing the damage.</p>
+  </div>
+</div>
+
+<div class="quote">
+  <div class="lab">The quote</div>
+  <div class="txt">“Tariff wars and trade wars serve no one's interests.”</div>
+  <div class="who">Guo Jiakun, China's foreign ministry, 27 November</div>
+</div>
+
+<div class="hair" style="margin-top:0;"></div>
+
+<!-- ================= BRIEFS ================= -->
+<div class="briefs">
+  <div class="brief">
+    <span class="tag">Technology</span>
+    <b>Nvidia freezes AI-server exports to four Asian markets</b>
+    Dell and Supermicro told buyers in Malaysia, Singapore, Thailand and Indonesia that
+    orders cannot ship pending new US licence checks.
+  </div>
+  <div class="brief">
+    <span class="tag">Sport</span>
+    <b>Sinner to miss the Australian Open after knee surgery</b>
+    Tennis Australia confirms the world No&nbsp;2, out since Wimbledon, will not defend in
+    Melbourne; the draw opens on 17 January.
+  </div>
+  <div class="brief">
+    <span class="tag">Culture</span>
+    <b>Andy Taylor, Duran Duran's guitarist, dies at 65</b>
+    The founding player behind “Rio” and “Hungry Like the Wolf” died at home after a long
+    illness with prostate cancer.
+  </div>
+  <div class="brief">
+    <span class="tag">Britain</span>
+    <b>MoD sounds out 100,000 veterans for recall</b>
+    The first such approach since the Cold War asks the Strategic Reserve to volunteer for
+    training as the regular army nears 73,000.
+  </div>
+
+  <div class="brief">
+    <span class="tag">Europe</span>
+    <b>Russian sabotage in Europe up 16 per cent, IISS says</b>
+    The London think tank counts more timed and remote-detonated devices; military-industrial
+    and transport sites made up more than half of the 12-month total.
+  </div>
+  <div class="brief">
+    <span class="tag">Americas</span>
+    <b>Trump tells Putin to pull back from Europe</b>
+    The president said he had asked Moscow to end “military aggression” across the continent
+    and hoped it would open the way to a peace deal on Ukraine.
+  </div>
+  <div class="brief">
+    <span class="tag">Africa</span>
+    <b>Fuel tanker fire on Cairo ring road kills 31</b>
+    Prosecutors detain the driver, who told them he was speeding and weaving when he struck
+    the truck; 27 vehicles burned and more than 20 injured.
+  </div>
+  <div class="brief">
+    <span class="tag">Middle East</span>
+    <b>Iran offers a joint inquiry into the Kuwait drone strike</b>
+    Foreign Minister Araghchi told Kuwait that Tehran had no part in the attack that killed
+    two Italian technicians, and proposed a shared investigation.
+  </div>
+</div>
+
+<div class="fill"></div>
+
+<div class="colophon">
+  <span>Figures as published on the day</span>
+  <span>Compiled from wire reports · 27 November 2026 · 23:00 UTC</span>
+  <span>Next edition: Saturday, 28 November</span>
+</div>
+
+<footer>
+  <div>Reuters &nbsp;·&nbsp; AP &nbsp;·&nbsp; FT &nbsp;·&nbsp; Bloomberg &nbsp;·&nbsp; Asahi &nbsp;·&nbsp; Anadolu &nbsp;·&nbsp; Consilium &nbsp;·&nbsp; Rocket Lab</div>
+  <div>The Daily Ledger &nbsp;·&nbsp; page one of one &nbsp;·&nbsp; 27.11.2026</div>
+</footer>
+
+</body>
+</html>

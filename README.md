@@ -4,7 +4,7 @@ A one-page newspaper front page that sums up the world news of **Friday, 27 Nove
 in a single 1024×1024 image.
 
 Built for the make.fun bounty [`news-image-20261127`](https://make.fun/bounty/news-image-20261127)
-— "Sum up 27 November's world news in one image".
+— "Sum up 27 November’s world news in one image".
 
 ![entry](entry.png)
 
@@ -22,19 +22,19 @@ CSS and SVG — no images, no webfonts, no framework, no network at render time.
 
 **Lead — Trade / Washington and Beijing**
 
-Half the world's output says no to Washington's tariffs — fourteen economies formally reject
+Half the world’s output says no to Washington’s tariffs — fourteen economies formally reject
 the Section 301 "overcapacity" finding; China threatens "necessary measures" as the truce
 clock runs to 10 January.
 
 1. **Europe · Frankfurt** — De Cos nominated to lead the ECB as inflation holds near 4%
-2. **Europe · Brussels** — Budget summit deadlocks over Ukraine's €45bn
+2. **Europe · Brussels** — Budget summit deadlocks over Ukraine’s €45bn
 3. **Middle East · Sanaa and Kuwait** — Eleven dead in Yemen; a drone war reaches Kuwait
 4. **Africa · Ituri, DR Congo** — Ebola passes 12,000 cases as the fighting cuts the response
-5. **Asia-Pacific · Mahia** — Electron's 101st flight sets a company record
-6. **Americas · Washington** — Hackers reach the control plane of the Air Force's cloud
+5. **Asia-Pacific · Mahia** — Electron’s 101st flight caps a record year
+6. **Americas · Washington** — Hackers reach the control plane of the Air Force’s cloud
 
 **Briefs** — Nvidia freezes AI-server shipments to four Asian markets · Sinner to miss the
-Australian Open after knee surgery · Andy Taylor, Duran Duran's guitarist, dies at 65 ·
+Australian Open after knee surgery · Andy Taylor, Duran Duran’s guitarist, dies at 65 ·
 MoD sounds out 100,000 veterans for recall · Brussels floats a digital levy and Washington
 objects · Saudi and Turkish teams open talks in Islamabad · Fuel tanker fire on Cairo ring
 road kills 31 · Iran offers a joint inquiry into the Kuwait drone strike

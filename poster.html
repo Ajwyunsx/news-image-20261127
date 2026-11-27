@@ -11,7 +11,7 @@
     color:#17130e;
     font-family:'Liberation Serif', Georgia, 'DejaVu Serif', serif;
     -webkit-font-smoothing:antialiased;
-    padding:22px 40px 0 40px;
+    padding:20px 40px 8px 40px;
     position:relative;
     overflow:hidden;
     display:flex; flex-direction:column; box-sizing:border-box;
@@ -30,8 +30,8 @@
   .topstrip b { font-weight:700; color:#17130e; }
 
   /* ---------- masthead ---------- */
-  .masthead { padding:6px 0 6px; text-align:center; position:relative; }
-  .masthead h1 { font-size:60px; line-height:.94; letter-spacing:.035em; font-weight:400; }
+  .masthead { padding:3px 0 4px; text-align:center; position:relative; }
+  .masthead h1 { font-size:57px; line-height:.94; letter-spacing:.035em; font-weight:400; }
   .masthead .sub { font-family:'Liberation Sans', Helvetica, Arial, sans-serif;
     font-size:8.4px; letter-spacing:.30em; text-transform:uppercase; color:#4a4238; margin-top:6px; }
   .masthead .corner { position:absolute; bottom:10px; font-family:'Liberation Sans',sans-serif;
@@ -39,11 +39,11 @@
   .corner.l { left:0; } .corner.r { right:0; text-align:right; }
 
   /* ---------- dateline band ---------- */
-  .dateline { display:flex; align-items:flex-end; gap:0; padding:8px 0 7px; margin-top:1px; }
+  .dateline { display:flex; align-items:flex-end; gap:0; padding:5px 0 5px; margin-top:1px; }
   .dnum { display:flex; align-items:flex-start; gap:11px; padding-right:18px; }
   .dnum .dow { font-family:'Liberation Sans',sans-serif; font-size:9.5px; letter-spacing:.26em;
     text-transform:uppercase; padding-top:11px; }
-  .dnum .big { font-size:74px; line-height:.78; letter-spacing:-.015em; }
+  .dnum .big { font-size:70px; line-height:.78; letter-spacing:-.015em; }
   .dnum .mon { display:flex; flex-direction:column; padding-top:6px; }
   .dnum .mon span:first-child { font-family:'Liberation Sans',sans-serif; font-size:17px;
     letter-spacing:.16em; text-transform:uppercase; font-weight:700; }
@@ -57,15 +57,15 @@
     letter-spacing:.10em; text-transform:uppercase; color:#4a4238; margin-top:4px; max-width:106px; line-height:1.3; }
 
   /* ---------- lead ---------- */
-  .lead { display:flex; gap:20px; padding:11px 0 10px; }
+  .lead { display:flex; gap:20px; padding:8px 0 7px; }
   .lead .kicker { font-family:'Liberation Sans',sans-serif; font-size:9px; letter-spacing:.2em;
     text-transform:uppercase; color:#b31b1b; font-weight:700; margin-bottom:7px; }
-  .lead h2 { font-size:42px; line-height:1.02; letter-spacing:-.012em; font-weight:400; }
+  .lead h2 { font-size:40px; line-height:1.02; letter-spacing:-.012em; font-weight:400; }
   .lead h2 em { font-style:italic; }
-  .lead .dek { font-family:'Liberation Sans',sans-serif; font-size:12px; line-height:1.42;
+  .lead .dek { font-family:'Liberation Sans',sans-serif; font-size:11.9px; line-height:1.42;
     color:#2a241c; margin-top:9px; max-width:560px; }
   .lead .dek b { font-weight:700; }
-  .lead .body { font-size:10.5px; line-height:1.44; color:#2a241c; margin-top:8px; max-width:560px;
+  .lead .body { font-size:10.5px; line-height:1.42; color:#2a241c; margin-top:8px; max-width:560px;
     column-count:2; column-gap:16px; column-rule:1px solid rgba(23,19,14,.2); }
   .lead .body p { text-indent:0; }
   .lead .art { flex:0 0 268px; display:flex; flex-direction:column; justify-content:flex-start;
@@ -76,17 +76,17 @@
 
   /* ---------- grid ---------- */
   .grid { display:grid; grid-template-columns:repeat(3,1fr); grid-auto-rows:1fr; }
-  .cell { padding:10px 17px 10px 0; border-top:1px solid rgba(23,19,14,.45); }
+  .cell { padding:8px 17px 8px 0; border-top:1px solid rgba(23,19,14,.45); }
   .cell + .cell { padding-left:17px; border-left:1px solid rgba(23,19,14,.28); }
   .cell:nth-child(3n) { padding-right:0; }
   .cell .head { display:flex; align-items:flex-start; justify-content:space-between; gap:8px; margin-bottom:6px; }
   .cell .kick { font-family:'Liberation Sans',sans-serif; font-size:8.2px; letter-spacing:.15em;
     text-transform:uppercase; color:#b31b1b; font-weight:700; padding-top:2px; }
-  .cell h3 { font-size:19.5px; line-height:1.06; font-weight:400; letter-spacing:-.005em; }
-  .cell p { font-family:'Liberation Sans',sans-serif; font-size:10.1px; line-height:1.36; color:#2a241c; margin-top:6px; }
+  .cell h3 { font-size:19.6px; line-height:1.06; font-weight:400; letter-spacing:-.005em; }
+  .cell p { font-family:'Liberation Sans',sans-serif; font-size:10.3px; line-height:1.40; color:#2a241c; margin-top:6px; }
   .cell .icon { flex:0 0 30px; width:30px; height:30px; }
   .cell .icon svg { width:30px; height:30px; display:block; }
-  .quote { display:flex; align-items:baseline; gap:14px; margin-top:0; padding:10px 0 0; border-top:1px solid rgba(23,19,14,.45); }
+  .quote { display:flex; align-items:baseline; gap:14px; margin-top:0; padding:8px 0 0; border-top:1px solid rgba(23,19,14,.45); }
   .quote .lab { font-family:'Liberation Sans',sans-serif; font-size:8.2px; letter-spacing:.16em;
     text-transform:uppercase; color:#b31b1b; font-weight:700; white-space:nowrap; }
   .quote .txt { font-size:16.5px; line-height:1.2; font-style:italic; }
@@ -106,8 +106,8 @@
 
   /* ---------- briefs ---------- */
   .briefs { display:grid; grid-template-columns:repeat(4,1fr); margin-top:0; padding-top:0; }
-  .brief { padding:9px 14px 11px 0; border-top:1px solid rgba(23,19,14,.3);
-    font-family:'Liberation Sans',sans-serif; font-size:8.9px; line-height:1.34; color:#2a241c; }
+  .brief { padding:8px 14px 8px 0; border-top:1px solid rgba(23,19,14,.3);
+    font-family:'Liberation Sans',sans-serif; font-size:9.1px; line-height:1.38; color:#2a241c; }
   .brief + .brief { padding-left:14px; border-left:1px solid rgba(23,19,14,.22); }
   .brief:nth-child(4n) { padding-right:0; }
   .brief:nth-child(4n+1) { padding-left:0; border-left:none; }
@@ -115,13 +115,13 @@
     line-height:1.12; color:#17130e; font-weight:700; margin-bottom:3px; }
   .brief .tag { font-size:8px; letter-spacing:.15em; text-transform:uppercase; color:#b31b1b; font-weight:700; }
 
-  .fill { flex:1 1 auto; min-height:10px; }
+  .fill { flex:1 1 auto; min-height:4px; }
   .colophon { display:flex; justify-content:space-between; align-items:baseline; margin-top:0;
-    padding-top:6px; border-top:1px solid rgba(23,19,14,.35); font-family:'Liberation Sans',sans-serif;
+    padding-top:5px; border-top:1px solid rgba(23,19,14,.35); font-family:'Liberation Sans',sans-serif;
     font-size:7.6px; letter-spacing:.13em; text-transform:uppercase; color:#5a5145; }
   footer { display:flex; justify-content:space-between; align-items:baseline;
     font-family:'Liberation Sans',sans-serif; font-size:7.8px; letter-spacing:.1em;
-    text-transform:uppercase; color:#4a4238; border-top:2px solid #17130e; padding-top:6px; margin:10px 0 15px; }
+    text-transform:uppercase; color:#4a4238; border-top:2px solid #17130e; padding-top:6px; margin:7px 0 8px; }
 </style>
 </head>
 <body>
@@ -182,7 +182,7 @@
       <div class="row"><div class="nm">China</div><div class="tr"><div class="fl" style="width:50%"></div></div><div class="vl">20%</div></div>
       <div class="row"><div class="nm">Singapore</div><div class="tr"><div class="fl" style="width:50%"></div></div><div class="vl">20%</div></div>
       <div class="row"><div class="nm">Japan</div><div class="tr"><div class="fl" style="width:37.5%"></div></div><div class="vl">15%</div></div>
-      <div class="row"><div class="nm">E.U.</div><div class="tr"><div class="fl" style="width:37.5%"></div></div><div class="vl">15%</div></div>
+      <div class="row"><div class="nm">EU</div><div class="tr"><div class="fl" style="width:37.5%"></div></div><div class="vl">15%</div></div>
     </div>
     <div class="cap">Caps under existing deals; China's rate could double to 40% if Washington judges
       Beijing uncooperative. Rates cover 14 economies, about half of world output.</div>
@@ -201,9 +201,9 @@
         <path d="M7.5 18 V27"/><path d="M13.2 18 V27"/><path d="M20.8 18 V27"/><path d="M26.5 18 V27"/>
         <path d="M3.5 30 H30.5" stroke-width="2"/></svg></div>
     </div>
-    <h3>De Cos takes the ECB, and a 4% inflation problem</h3>
-    <p>EU leaders pick Spain's Pablo Hernández de Cos to succeed Christine Lagarde on 7 February,
-      handing a Draghi ally the fight against war-driven prices.</p>
+    <h3>De Cos nominated to lead the ECB as inflation holds near 4%</h3>
+    <p>The European Council put Spain's Pablo Hernández de Cos forward to succeed
+      Christine Lagarde when she leaves on 7 February; inflation is near 4%.</p>
   </div>
 
   <div class="cell">
@@ -217,7 +217,7 @@
           <circle cx="11.7" cy="22.9" r="1.5"/><circle cx="8.4" cy="18.4" r="1.5"/>
           <circle cx="8.4" cy="13.1" r="1.5"/><circle cx="11.7" cy="8.6" r="1.5"/>
         </g>
-        <circle cx="17" cy="15.9" r="4.1" stroke="#b31b1b" stroke-width="1.7"/></svg></div>
+        <circle cx="17" cy="15.9" r="4.4" stroke="#17130e" stroke-width="1.2"/></svg></div>
     </div>
     <h3>Budget summit deadlocks over Ukraine's €45bn</h3>
     <p>Merz demands deeper cuts and no new borrowing; Macron calls €204bn of savings a “strategic
@@ -231,7 +231,7 @@
         <path d="M17 3.6 L19.6 11.2 L27.4 6.6 L22.8 14.4 L30.4 17 L22.8 19.6 L27.4 27.4
                  L19.6 22.8 L17 30.4 L14.4 22.8 L6.6 27.4 L11.2 19.6 L3.6 17 L11.2 14.4
                  L6.6 6.6 L14.4 11.2 Z" stroke-linejoin="round"/>
-        <circle cx="17" cy="17" r="2.4" fill="#b31b1b" stroke="none"/>
+        <circle cx="17" cy="17" r="2.2" fill="#17130e" stroke="none"/>
       </svg></div>
     </div>
     <h3>Eleven dead in Yemen; a drone war reaches Kuwait</h3>
@@ -297,7 +297,7 @@
 <div class="briefs">
   <div class="brief">
     <span class="tag">Technology</span>
-    <b>Nvidia freezes AI-server exports to four Asian markets</b>
+    <b>Nvidia freezes AI-server shipments to four Asian markets</b>
     Dell and Supermicro told buyers in Malaysia, Singapore, Thailand and Indonesia that
     orders cannot ship pending new US licence checks.
   </div>

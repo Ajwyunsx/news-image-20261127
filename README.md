@@ -16,7 +16,7 @@ CSS and SVG — no images, no webfonts, no framework, no network at render time.
 - Newsprint `#f3eee3`, ink `#17130e`, a single accent red `#b31b1b`
 - Serif headlines (Liberation Serif / Georgia), sans deks (Liberation Sans / Helvetica)
 - Masthead rule, oversized dateline, four figures of the day, a lead story with a chart,
-  a 2×3 grid of picture-led stories, a pull quote and eight one-line briefs
+  a 2×3 grid of pictogram stories, a pull quote and eight one-line briefs
 
 ## Stories
 
@@ -26,14 +26,14 @@ Half the world's output says no to Washington's tariffs — fourteen economies f
 the Section 301 "overcapacity" finding; China threatens "necessary measures" as the truce
 clock runs to 10 January.
 
-1. **Europe · Frankfurt** — De Cos takes the ECB, and a 4% inflation problem
+1. **Europe · Frankfurt** — De Cos nominated to lead the ECB as inflation holds near 4%
 2. **Europe · Brussels** — Budget summit deadlocks over Ukraine's €45bn
 3. **Middle East · Sanaa and Kuwait** — Eleven dead in Yemen; a drone war reaches Kuwait
 4. **Africa · Ituri, DR Congo** — Ebola passes 12,000 cases as the fighting cuts the response
 5. **Asia-Pacific · Mahia** — Electron's 101st flight sets a company record
 6. **Americas · Washington** — Hackers reach the control plane of the Air Force's cloud
 
-**Briefs** — Nvidia freezes AI-server exports to four Asian markets · Sinner to miss the
+**Briefs** — Nvidia freezes AI-server shipments to four Asian markets · Sinner to miss the
 Australian Open after knee surgery · Andy Taylor, Duran Duran's guitarist, dies at 65 ·
 MoD sounds out 100,000 veterans for recall · Russian sabotage in Europe up 16 per cent, IISS
 says · Trump tells Putin to pull back from Europe · Fuel tanker fire on Cairo ring road kills

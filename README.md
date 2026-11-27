@@ -35,12 +35,12 @@ clock runs to 10 January.
 
 **Briefs** — Nvidia freezes AI-server shipments to four Asian markets · Sinner to miss the
 Australian Open after knee surgery · Andy Taylor, Duran Duran's guitarist, dies at 65 ·
-MoD sounds out 100,000 veterans for recall · Russian sabotage in Europe up 16 per cent, IISS
-says · Trump tells Putin to pull back from Europe · Fuel tanker fire on Cairo ring road kills
-31 · Iran offers a joint inquiry into the Kuwait drone strike
+MoD sounds out 100,000 veterans for recall · Brussels floats a digital levy and Washington
+objects · Saudi and Turkish teams open talks in Islamabad · Fuel tanker fire on Cairo ring
+road kills 31 · Iran offers a joint inquiry into the Kuwait drone strike
 
-Five continents, eight domains (trade, economy, conflict, health, science, cyber, sport,
-culture). Sources and one-line facts are in [`RESEARCH.md`](RESEARCH.md).
+Five continents, nine domains (trade, economy, conflict, health, science, cyber, defence,
+sport, culture). Sources and one-line facts are in [`RESEARCH.md`](RESEARCH.md).
 
 ## Run
 

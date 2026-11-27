@@ -48,8 +48,13 @@ sport, culture). Sources and one-line facts are in [`RESEARCH.md`](RESEARCH.md).
 python3 main.py
 ```
 
-Deterministic: copies `entry.png` to `/output/entry.png`. No dependencies beyond the Python
-standard library.
+Deterministic: verifies `entry.png` is a 1024×1024 PNG of at most 1 MiB, then copies it to
+`/output/entry.png`. No dependencies beyond the Python standard library. Outside the grader,
+`MAKEFUN_OUTPUT_DIR` stands in for `/output`:
+
+```bash
+mkdir -p out && MAKEFUN_OUTPUT_DIR=out python3 main.py
+```
 
 ## Licence
 
